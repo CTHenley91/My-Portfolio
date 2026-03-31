@@ -1,0 +1,10 @@
+==================================================
+SESSION 10: SANDBOX DETONATION REPORT
+Operator: vboxuser
+==================================================
+
+QUESTION 1: Did the ping to google.com succeed or fail in Host-Only mode?
+ANSWER: It failed because Host Only mode effectively cuts the cable to the internet and only allows whatever is in the VM to speak with what's on the machine. 
+
+QUESTION 2: Why must a SOC analyst NEVER use "Bridged" mode when detonating unknown malware?
+ANSWER: If the VM is in Bridged mode the router will see it as any other machine on the network which basically gives the malware a map to everything on your network. 
