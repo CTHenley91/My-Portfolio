@@ -1,0 +1,17 @@
+### Part 1: Restored Gateway
+After identifying active hosts on the 192.168.56.x subnet using fping, the routing table was updated to redirect 192.168.10.0/24 traffic through the discovered gateway.
+
+Command: sudo ip route add 192.168.10.0/24 via 192.168.56.103 dev enp0s8
+
+Output:
+192.168.10.0/24 via 192.168.56.103 dev enp0s8 
+
+### Part 2: TCP Handshake Analysis
+The connection attempt was analyzed using tcpdump. While egress SYN [S] packets were successfully transmitted from Foundations-Lab to secure.titancorp.com, no SYN-ACK [S.] was received.
+
+Tcpdump Snippet:
+01:43:29.667868 IP Foundations-Lab.33082 > 192.168.10.193.http: Flags [S], seq 1308062670...
+01:43:30.732576 IP Foundations-Lab.33082 > 192.168.10.193.http: Flags [S], seq 1308062670...
+
+Conclusion: 
+Routing is successfully restored at the source. The timeout indicates a downstream block (Firewall DROP) or a missing return route on the target/gateway.
