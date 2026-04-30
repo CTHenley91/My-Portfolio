@@ -1,0 +1,16 @@
+==================================================
+SESSION 16: READINESS INVENTORY
+==================================================
+Operator: Cameron
+Date: 2026/04/29
+
+Confidence Audit (Yes/No):
+1. Nmap (Network Scanning): [Yes]
+2. Docker (Containerization): [Yes]
+3. Linux Hardening (UFW/chmod): [Yes]
+4. VS Code Remote-SSH: [Yes]
+
+Identify your weakest area and your plan to review it:
+My weakest area is currently port identification. While docker ps is the go to tool, today's lab showed that native host services, in this case Nginx, 
+can squat on ports without appear in docker. My plan is to practice with sudo ss -tlnp and lsof -i to become faster at identifying process conflicts. 
+==================================================
