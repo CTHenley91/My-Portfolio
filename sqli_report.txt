@@ -1,0 +1,18 @@
+==================================================
+SESSION 25: SQL INJECTION EXFILTRATION REPORT
+==================================================
+
+1. AUTHENTICATION BYPASS
+* Tautology Payload Used: ' OR 1=1 --
+
+2. DATABASE MAPPING (UNION ATTACK)
+* Number of Columns Discovered: 2
+* Table Name Discovered: employees, which contained usernames, passwords, departments, and salaries
+
+3. DATA EXFILTRATION
+* CEO Salary Extracted: $2,500,000
+* Final UNION Payload Used: ' UNION SELECT name, salary FROM employees --
+
+4. REMEDIATION
+* What is the primary defense against this attack?
+Answer: Prepared Statements causes the database to treat all user inputs as data rather than executable code. This makes it immune to SQL injections.
